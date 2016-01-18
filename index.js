@@ -60,7 +60,7 @@ module.exports = function factory (options) {
     endpoint: {
       value: assign({
         protocol: 'https',
-        hostname: 'reporting.reactcrm.com'
+        hostname: 'reporting.funnels.io'
       }, options.endpoint || {})
     },
     apiKey: {

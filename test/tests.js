@@ -16,7 +16,7 @@ describe('reporting sdk', function () {
 
   it('should search by template name', function (done) {
 
-    var api = nock('https://reporting.reactcrm.com')
+    var api = nock('https://reporting.funnels.io')
       .get('/search/transactions/dashboard')
       .matchHeader('Authorization', 'Bearer apiKey')
       .reply(200, {hits: {total: 2}});
@@ -34,7 +34,7 @@ describe('reporting sdk', function () {
   });
 
   it('should search with body request', function (done) {
-    var api = nock('https://reporting.reactcrm.com')
+    var api = nock('https://reporting.funnels.io')
       .post('/search/transactions', {query: {term: {foo: 'bar'}}})
       .matchHeader('Authorization', 'Bearer apiKey')
       .reply(200, {hits: {total: 2}});
@@ -53,7 +53,7 @@ describe('reporting sdk', function () {
   });
 
   it('should reject promise if any error happens', function (done) {
-    var api = nock('https://reporting.reactcrm.com')
+    var api = nock('https://reporting.funnels.io')
       .get('/search/transactions/dashboard')
       .matchHeader('Authorization', 'Bearer apiKey')
       .reply(404, {message: 'could not find the search template'});
@@ -71,7 +71,7 @@ describe('reporting sdk', function () {
   });
 
   it('should add transactions', function (done) {
-    var api = nock('https://reporting.reactcrm.com')
+    var api = nock('https://reporting.funnels.io')
       .post('/transactions', [{id: '1'}, {id: '2'}])
       .matchHeader('Authorization', 'Bearer apiKey')
       .reply(202);
@@ -88,7 +88,7 @@ describe('reporting sdk', function () {
   });
 
   it('should reject the promise if it could not accept the request', function (done) {
-    var api = nock('https://reporting.reactcrm.com')
+    var api = nock('https://reporting.funnels.io')
       .post('/transactions', [{id: '1'}, {}])
       .matchHeader('Authorization', 'Bearer apiKey')
       .reply(400);
