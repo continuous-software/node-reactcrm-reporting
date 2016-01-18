@@ -1,6 +1,6 @@
 {
   "name": "reactcrm-reporting",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "nodejs sdk for reactcrm reporting api",
   "main": "index.js",
   "scripts": {
